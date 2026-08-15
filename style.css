@@ -1384,3 +1384,64 @@ footer p {
 
 }
 ```
+/* =========================================
+   FIX BOOKING BUTTON TEXT
+   ========================================= */
+
+.button {
+  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    #087fe8,
+    #0565bd
+  ) !important;
+
+  font-weight: 900 !important;
+
+  text-shadow: none !important;
+}
+
+
+/* Outline buttons such as Bin Cleaning */
+
+.button.outline {
+  color: #087fe8 !important;
+
+  background: #ffffff !important;
+
+  border: 2px solid #087fe8 !important;
+}
+
+
+/* Header Schedule a Quote button */
+
+header > .button.small {
+  color: #ffffff !important;
+
+  background: linear-gradient(
+    135deg,
+    #087fe8,
+    #0565bd
+  ) !important;
+
+  font-weight: 900 !important;
+}
+
+
+/* CTA button */
+
+.cta .button {
+  color: #0565bd !important;
+
+  background: #ffffff !important;
+}
+
+
+/* Make sure links don't inherit weird colors */
+
+a.button,
+a.button:visited,
+a.button:hover,
+a.button:active {
+  text-decoration: none !important;
+}
