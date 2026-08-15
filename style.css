@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+/* =========================================
+   CURBSIDE SHINE — NEW WEBSITE STYLE
+   ========================================= */
+
+:root {
+  --blue: #078cff;
+  --blue-dark: #0065d8;
+  --navy: #071522;
+  --navy-2: #0b2033;
+  --black: #03070b;
+  --white: #ffffff;
+  --muted: #aebdca;
+  --border: rgba(7, 140, 255, 0.22);
+}
+
+/* ---------- RESET ---------- */
 
 * {
   box-sizing: border-box;
@@ -10,477 +25,826 @@ html {
 
 body {
   margin: 0;
-  font-family: "DM Sans", Arial, sans-serif;
-  color: #17202a;
-  background: #ffffff;
-  line-height: 1.6;
+  padding: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
-  height: auto;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
-/* =========================
+
+/* =========================================
    HEADER
-========================= */
+   ========================================= */
 
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.97);
-  border-bottom: 1px solid #e5e9ee;
-  box-shadow: 0 3px 18px rgba(0,0,0,0.07);
-}
+  z-index: 9999;
 
-header,
-.site-header {
-  min-height: 76px;
-}
+  background: rgba(3, 7, 11, 0.96);
+  border-bottom: 1px solid var(--border);
 
-header > *,
-.site-header > * {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.logo {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.55rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  color: #18212b;
-}
-
-.logo span {
-  color: #0879e8;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 nav {
+  max-width: 1200px;
+  min-height: 74px;
+
+  margin: 0 auto;
+  padding: 0 24px;
+
   display: flex;
   align-items: center;
-  gap: 28px;
+  justify-content: space-between;
 }
 
-nav a {
-  font-weight: 600;
-  font-size: .92rem;
-  transition: .2s ease;
+
+/* LOGO */
+
+.logo {
+  color: white !important;
+
+  font-size: 26px;
+  font-weight: 900;
+
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
-nav a:hover {
-  color: #0879e8;
+.logo span {
+  color: var(--blue);
 }
 
-/* =========================
-   BUTTONS
-========================= */
 
-.button {
-  display: inline-flex;
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 12px 24px;
-  border: 0;
-  border-radius: 8px;
-  background: #0879e8;
-  color: #fff !important;
-  font-weight: 700;
-  font-size: .95rem;
-  letter-spacing: .01em;
-  cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-  box-shadow: 0 7px 18px rgba(8,121,232,.25);
+  gap: 30px;
 }
 
-.button:hover {
-  background: #0567c7;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(8,121,232,.30);
-}
-
-.button.outline {
-  background: #fff;
-  color: #0879e8 !important;
-  border: 2px solid #0879e8;
-  box-shadow: none;
-}
-
-.button.outline:hover {
-  background: #0879e8;
-  color: #fff !important;
-}
-
-.button.small {
-  min-height: 42px;
-  padding: 9px 18px;
-  font-size: .88rem;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  position: relative;
-  padding: 95px 24px 85px;
-  background:
-    linear-gradient(135deg, #071522 0%, #102b40 55%, #0a5fae 100%);
+.nav-links a {
   color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+
+/* BOOK BUTTON */
+
+.book-now,
+.nav-button {
+  background: linear-gradient(
+    135deg,
+    #078cff,
+    #0065d8
+  ) !important;
+
+  color: white !important;
+
+  padding: 13px 25px;
+
+  border-radius: 30px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 25px rgba(0, 140, 255, 0.25);
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero,
+.hero-section {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(0, 140, 255, 0.18),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      #03070b,
+      #071522
+    );
+
   overflow: hidden;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  right: -180px;
-  top: -180px;
-  border-radius: 50%;
-  background: rgba(8,121,232,.28);
-  filter: blur(10px);
+
+/* HERO IMAGE */
+
+.hero img,
+.hero-image {
+  width: 100%;
+
+  display: block;
+
+  max-height: 520px;
+
+  object-fit: cover;
+  object-position: center top;
+
+  margin: 0 auto;
 }
 
-.hero > div {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: auto;
+
+/* HERO CONTENT */
+
+.hero-content,
+.hero-text {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 55px 25px 70px;
+
+  text-align: center;
 }
 
-.eyebrow {
-  color: #62b4ff;
-  font-size: .8rem;
-  font-weight: 800;
-  letter-spacing: .18em;
+
+/* SMALL BLUE TEXT */
+
+.hero-eyebrow,
+.location,
+.hero-label {
+  color: var(--blue);
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
   text-transform: uppercase;
+
+  margin-bottom: 18px;
 }
+
+
+/* MAIN HEADLINE */
 
 .hero h1 {
-  max-width: 700px;
-  margin: 15px 0 20px;
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(3.2rem, 8vw, 6.5rem);
-  line-height: .98;
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(
+    48px,
+    8vw,
+    86px
+  );
+
+  font-weight: 950;
+
+  line-height: 0.94;
+
+  letter-spacing: -3px;
+
   text-transform: uppercase;
-  letter-spacing: -.02em;
 }
 
-.hero h1 em {
-  color: #1688f5;
-  font-style: normal;
+.hero h1 span {
+  color: var(--blue);
 }
 
-.lead {
-  max-width: 680px;
-  color: #d8e5ef;
-  font-size: 1.1rem;
+
+/* HERO DESCRIPTION */
+
+.hero p {
+  max-width: 700px;
+
+  margin: 25px auto;
+
+  color: #c3d0dc;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.hero-buttons,
+.cta-buttons,
+.buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+
+button,
+.cta,
+.button,
+.btn {
+  min-height: 58px;
+
+  padding: 15px 28px;
+
+  border-radius: 10px;
+
+  border: none;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* BLUE BUTTON */
+
+.cta-primary,
+.primary,
+.btn-primary,
+.schedule-button {
+  background: linear-gradient(
+    135deg,
+    #078cff,
+    #0065d8
+  ) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 10px 30px rgba(0, 140, 255, 0.25);
+}
+
+
+/* WHITE BUTTON */
+
+.cta-secondary,
+.secondary,
+.btn-secondary {
+  background: white !important;
+
+  color: #086dce !important;
+
+  border: 2px solid var(--blue);
+}
+
+
+/* HOVER */
+
+button:hover,
+.cta:hover,
+.button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 140, 255, 0.25);
+}
+
+
+/* =========================================
+   SERVICES SECTION
+   ========================================= */
+
+.services,
+.services-section {
+  padding: 75px 20px;
+
+  background: #081522;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+
+.section-title {
+  text-align: center;
+
+  max-width: 700px;
+
+  margin: 0 auto 40px;
+}
+
+.section-title .small,
+.section-label {
+  color: var(--blue);
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.section-title h2,
+.services h2 {
+  margin: 10px 0;
+
+  font-size: clamp(
+    36px,
+    6vw,
+    58px
+  );
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.section-title h2 span,
+.services h2 span {
+  color: var(--blue);
+}
+
+
+/* SERVICE GRID */
+
+.services-grid,
+.service-grid {
+  max-width: 1100px;
+
+  margin: 40px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 0;
+}
+
+
+/* SERVICE ITEM */
+
+.service,
+.service-card {
+  padding: 25px 15px;
+
+  text-align: center;
+
+  background: transparent;
+
+  border-right: 1px solid #20435f;
+}
+
+.service:last-child,
+.service-card:last-child {
+  border-right: none;
+}
+
+
+.service-icon {
+  font-size: 42px;
+
+  margin-bottom: 14px;
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(0, 140, 255, 0.45)
+    );
+}
+
+
+.service h3,
+.service-card h3 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  line-height: 1.2;
+
+  text-transform: uppercase;
+}
+
+
+.service p,
+.service-card p {
+  color: #8295a7;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  margin-top: 8px;
+}
+
+
+/* =========================================
+   CLEAN / BRIGHT / PROTECTED
+   ========================================= */
+
+.about,
+.why {
+  padding: 90px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 115, 255, 0.14),
+      transparent 45%
+    ),
+    #050b12;
+}
+
+
+.about h2,
+.why h2 {
+  margin: 10px 0 20px;
+
+  font-size: clamp(
+    40px,
+    7vw,
+    65px
+  );
+
+  line-height: 0.95;
+
+  text-transform: uppercase;
+}
+
+.about h2 span,
+.why h2 span {
+  color: var(--blue);
+}
+
+
+.about p,
+.why p {
+  max-width: 700px;
+
+  margin: auto;
+
+  color: #aebdca;
+
+  font-size: 18px;
+
   line-height: 1.7;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
+
+/* =========================================
+   BIN CLEANING
+   ========================================= */
+
+.bin-cleaning,
+.bin-section {
+  padding: 70px 20px;
+
+  background: #081522;
 }
 
-/* =========================
-   SECTIONS
-========================= */
 
-section {
-  padding: 80px 24px;
-}
+.bin-box {
+  max-width: 950px;
 
-section > div {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  margin: auto;
 
-section h2 {
-  margin: 0 0 12px;
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: .01em;
-  color: #101820;
-}
+  padding: 45px 30px;
 
-section p {
-  color: #65717d;
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.services,
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.service-card,
-.card {
-  padding: 28px;
-  background: #fff;
-  border: 1px solid #e5eaf0;
-  border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(20,35,50,.07);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.service-card:hover,
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(20,35,50,.12);
-}
-
-.service-card h3,
-.card h3 {
-  margin: 0 0 8px;
-  font-family: "Oswald", sans-serif;
-  font-size: 1.55rem;
-  text-transform: uppercase;
-}
-
-.service-card p,
-.card p {
-  margin: 0;
-}
-
-/* =========================
-   BEFORE / AFTER
-========================= */
-
-.before-after-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.before-after {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.photo-box {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #eef2f5;
-  box-shadow: 0 10px 28px rgba(0,0,0,.12);
-}
-
-.photo-box img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-  transition: transform .4s ease;
-}
-
-.photo-box:hover img {
-  transform: scale(1.04);
-}
-
-.photo-box span {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  padding: 7px 11px;
-  border-radius: 6px;
-  background: rgba(0,0,0,.75);
-  color: #fff;
-  font-size: .75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-
-/* =========================
-   TRUST / INFO
-========================= */
-
-.trust {
-  color: #64717d;
-  font-size: .85rem;
-  font-weight: 600;
-}
-
-.trust strong {
-  color: #17202a;
-}
-
-/* =========================
-   CTA
-========================= */
-
-.cta {
-  padding: 75px 24px;
-  background: #071522;
-  color: white;
   text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 140, 255, 0.12),
+      rgba(5, 15, 25, 0.9)
+    );
+
+  border: 1px solid #1a4668;
+
+  border-radius: 18px;
 }
 
-.cta h2 {
+
+.bin-box h2 {
+  font-size: clamp(
+    35px,
+    6vw,
+    55px
+  );
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.bin-box h2 span {
+  color: var(--blue);
+}
+
+
+/* =========================================
+   CONTACT
+   ========================================= */
+
+.contact,
+.contact-section {
+  padding: 85px 20px;
+
+  text-align: center;
+
+  background: #03070b;
+}
+
+
+.contact h2,
+.contact-section h2 {
+  font-size: clamp(
+    40px,
+    7vw,
+    70px
+  );
+
+  line-height: 0.95;
+
+  text-transform: uppercase;
+}
+
+.contact h2 span,
+.contact-section h2 span {
+  color: var(--blue);
+}
+
+
+.phone,
+.phone-number {
+  display: inline-block;
+
+  margin-top: 25px;
+
   color: white;
+
+  font-size: clamp(
+    30px,
+    6vw,
+    52px
+  );
+
+  font-weight: 900;
 }
 
-.cta p {
-  color: #c7d6e1;
-  max-width: 650px;
-  margin: 15px auto 28px;
+.phone:hover,
+.phone-number:hover {
+  color: var(--blue);
 }
 
-/* =========================
+
+/* =========================================
    FOOTER
-========================= */
+   ========================================= */
 
 footer {
-  padding: 40px 24px;
-  background: #040b11;
-  color: #aebdca;
+  padding: 25px 20px;
+
+  background: #020508;
+
+  color: #647688;
+
   text-align: center;
-  font-size: .9rem;
+
+  font-size: 13px;
 }
 
-footer a:hover {
-  color: #1688f5;
-}
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+   ========================================= */
 
-@media (max-width: 800px) {
-
-  header {
-    position: sticky;
-    top: 0;
-  }
+@media (max-width: 768px) {
 
   nav {
-    gap: 14px;
+    min-height: 65px;
+
+    padding:
+      10px 16px;
   }
 
-  nav a {
-    font-size: .82rem;
-  }
-
-  .hero {
-    padding: 65px 20px 60px;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 15vw, 5rem);
-  }
-
-  .lead {
-    font-size: 1rem;
-  }
-
-  .actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-
-  .actions .button {
-    width: 100%;
-  }
-
-  section {
-    padding: 60px 20px;
-  }
-
-  .services,
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .before-after-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .before-after {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .photo-box img {
-    height: 210px;
-  }
-
-  section h2 {
-    font-size: 2.5rem;
-  }
-}
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media (max-width: 480px) {
-
-  header,
-  .site-header {
-    min-height: 68px;
-  }
 
   .logo {
-    font-size: 1.25rem;
+    font-size: 21px;
   }
 
-  nav {
-    gap: 9px;
+
+  /* HERO IMAGE */
+
+  .hero img,
+  .hero-image {
+    width: 100%;
+
+    height: 290px;
+
+    max-height: 290px;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    border-radius: 0;
   }
 
-  nav a {
-    font-size: .72rem;
+
+  /* HERO */
+
+  .hero-content,
+  .hero-text {
+    padding:
+      42px 20px 55px;
   }
 
-  .hero {
-    padding: 52px 18px 50px;
-  }
 
   .hero h1 {
-    font-size: 3.2rem;
+    font-size: 47px;
+
+    letter-spacing: -2px;
   }
 
-  .eyebrow {
-    font-size: .7rem;
+
+  .hero p {
+    font-size: 16px;
+
+    line-height: 1.55;
   }
 
-  .lead {
-    font-size: .95rem;
-  }
 
-  .button {
+  /* BUTTONS */
+
+  .hero-buttons,
+  .cta-buttons,
+  .buttons {
+    flex-direction: column;
+
     width: 100%;
   }
 
-  .before-after {
-    grid-template-columns: 1fr;
+
+  button,
+  .cta,
+  .button,
+  .btn {
+    width: 100%;
   }
 
-  .photo-box img {
-    height: 240px;
+
+  /* SERVICES */
+
+  .services,
+  .services-section {
+    padding:
+      60px 15px;
   }
+
+
+  .services-grid,
+  .service-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 0;
+  }
+
+
+  .service,
+  .service-card {
+    padding:
+      25px 10px;
+
+    border-right:
+      1px solid #20435f;
+
+    border-bottom:
+      1px solid #20435f;
+  }
+
+
+  .service:nth-child(2n) {
+    border-right: none;
+  }
+
+
+  .service-icon {
+    font-size: 36px;
+  }
+
+
+  .service h3,
+  .service-card h3 {
+    font-size: 13px;
+  }
+
+
+  /* ABOUT */
+
+  .about,
+  .why {
+    padding:
+      65px 20px;
+  }
+
+
+  .about p,
+  .why p {
+    font-size: 16px;
+  }
+
+
+  /* BIN */
+
+  .bin-cleaning,
+  .bin-section {
+    padding:
+      55px 15px;
+  }
+
+
+  .bin-box {
+    padding:
+      35px 20px;
+  }
+
+
+  /* CONTACT */
+
+  .contact,
+  .contact-section {
+    padding:
+      65px 20px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 420px) {
+
+  .hero h1 {
+    font-size: 41px;
+  }
+
+
+  .hero img,
+  .hero-image {
+    height: 255px;
+
+    max-height: 255px;
+  }
+
+
+  .services-grid,
+  .service-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .service {
+    min-height: 145px;
+  }
+
 }
