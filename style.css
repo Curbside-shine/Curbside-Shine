@@ -1,22 +1,24 @@
 ```css
 /* =========================================================
    CURBSIDE SHINE
-   LIGHT • CLEAN • EASY TO READ
+   BRIGHT • CLEAN • PROFESSIONAL
    ========================================================= */
 
 :root {
   --blue: #087fe8;
-  --blue-dark: #0565bd;
-  --light-blue: #eaf6ff;
+  --blue-dark: #0567c7;
+  --blue-light: #eaf6ff;
+  --blue-pale: #f5fbff;
 
   --white: #ffffff;
-  --off-white: #f6f9fc;
+  --gray-bg: #f6f9fc;
+  --gray-border: #dfe8ef;
 
-  --text: #182533;
-  --muted: #667788;
+  --dark: #172533;
+  --text: #35495a;
+  --muted: #718291;
 
-  --border: #dce6ee;
-  --shadow: 0 10px 30px rgba(25, 65, 95, .10);
+  --shadow: 0 8px 28px rgba(27, 73, 105, 0.09);
 }
 
 
@@ -34,8 +36,11 @@ html {
 
 body {
   margin: 0;
-  background: var(--white);
-  color: var(--text);
+  padding: 0;
+
+  background: #ffffff;
+
+  color: var(--dark);
 
   font-family:
     Arial,
@@ -43,6 +48,8 @@ body {
     sans-serif;
 
   line-height: 1.6;
+
+  overflow-x: hidden;
 }
 
 img {
@@ -67,7 +74,9 @@ header {
 
   z-index: 9999;
 
-  min-height: 78px;
+  width: 100%;
+
+  min-height: 76px;
 
   padding: 0 5%;
 
@@ -75,20 +84,20 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.97);
 
   border-bottom:
-    1px solid var(--border);
+    1px solid var(--gray-border);
 
   box-shadow:
-    0 3px 15px rgba(0,0,0,.06);
+    0 3px 16px rgba(0,0,0,.06);
 }
 
 
 /* LOGO */
 
 header .logo {
-  color: #172331;
+  color: var(--dark);
 
   font-size: 27px;
 
@@ -104,7 +113,7 @@ header .logo span {
 }
 
 
-/* NAVIGATION */
+/* NAV */
 
 header nav {
   display: flex;
@@ -115,7 +124,7 @@ header nav {
 }
 
 header nav a {
-  color: #344555;
+  color: #425566;
 
   font-size: 15px;
 
@@ -130,7 +139,7 @@ header nav a:hover {
 
 
 /* =========================================================
-   BOOK NOW BUTTON
+   HEADER SCHEDULE BUTTON
    ========================================================= */
 
 header > .button.small {
@@ -141,7 +150,7 @@ header > .button.small {
 
   min-height: 46px;
 
-  padding: 12px 24px;
+  padding: 11px 21px;
 
   border-radius: 8px;
 
@@ -152,14 +161,14 @@ header > .button.small {
       var(--blue-dark)
     );
 
-  color: white;
+  color: #ffffff;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 900;
 
   box-shadow:
-    0 6px 18px rgba(8,127,232,.25);
+    0 6px 18px rgba(8,127,232,.22);
 
   transition: .2s ease;
 }
@@ -168,12 +177,12 @@ header > .button.small:hover {
   transform: translateY(-2px);
 
   box-shadow:
-    0 9px 24px rgba(8,127,232,.32);
+    0 10px 24px rgba(8,127,232,.3);
 }
 
 
 /* =========================================================
-   ALL BUTTONS
+   BUTTONS
    ========================================================= */
 
 .button {
@@ -195,7 +204,7 @@ header > .button.small:hover {
       var(--blue-dark)
     );
 
-  color: white;
+  color: #ffffff;
 
   font-size: 16px;
 
@@ -213,14 +222,14 @@ header > .button.small:hover {
   transform: translateY(-2px);
 
   box-shadow:
-    0 10px 25px rgba(8,127,232,.28);
+    0 11px 27px rgba(8,127,232,.28);
 }
 
 
-/* OUTLINE BUTTON */
+/* OUTLINE */
 
 .button.outline {
-  background: white;
+  background: #ffffff;
 
   color: var(--blue);
 
@@ -231,7 +240,7 @@ header > .button.small:hover {
 }
 
 .button.outline:hover {
-  background: var(--light-blue);
+  background: var(--blue-light);
 }
 
 
@@ -243,7 +252,7 @@ header > .button.small:hover {
   min-height: 650px;
 
   padding:
-    90px 7%;
+    80px 7%;
 
   display: grid;
 
@@ -252,13 +261,13 @@ header > .button.small:hover {
 
   align-items: center;
 
-  gap: 65px;
+  gap: 60px;
 
   background:
     linear-gradient(
       135deg,
       #ffffff 0%,
-      #f2f9fe 100%
+      #f4faff 100%
     );
 }
 
@@ -266,7 +275,7 @@ header > .button.small:hover {
 /* HERO CONTENT */
 
 .hero-content {
-  max-width: 680px;
+  max-width: 690px;
 }
 
 
@@ -293,7 +302,7 @@ header > .button.small:hover {
 .hero h1 {
   margin: 0;
 
-  color: #172331;
+  color: var(--dark);
 
   font-size:
     clamp(50px, 6vw, 82px);
@@ -314,7 +323,7 @@ header > .button.small:hover {
 }
 
 
-/* HERO DESCRIPTION */
+/* DESCRIPTION */
 
 .hero .lead {
   max-width: 650px;
@@ -322,7 +331,7 @@ header > .button.small:hover {
   margin:
     25px 0 0;
 
-  color: #526576;
+  color: var(--text);
 
   font-size: 18px;
 
@@ -330,7 +339,7 @@ header > .button.small:hover {
 }
 
 
-/* ACTIONS */
+/* HERO BUTTONS */
 
 .actions {
   display: flex;
@@ -343,12 +352,12 @@ header > .button.small:hover {
 }
 
 
-/* TRUST */
+/* TRUST TEXT */
 
 .trust {
   margin-top: 20px;
 
-  color: #728493;
+  color: #7a8b99;
 
   font-size: 12px;
 
@@ -357,11 +366,13 @@ header > .button.small:hover {
 
 
 /* =========================================================
-   HERO BOX
+   HERO GRAPHIC
    ========================================================= */
 
 .hero-box {
-  min-height: 450px;
+  position: relative;
+
+  min-height: 440px;
 
   padding: 45px;
 
@@ -369,48 +380,46 @@ header > .button.small:hover {
 
   align-items: flex-end;
 
-  position: relative;
-
   overflow: hidden;
 
-  border-radius: 18px;
+  border-radius: 20px;
 
   background:
     linear-gradient(
       135deg,
-      #dff2ff,
-      #8ed0ff
+      #e4f5ff,
+      #9bd6ff
     );
 
   border:
-    1px solid #b8ddf7;
+    1px solid #b9ddf5;
 
   box-shadow:
-    var(--shadow);
+    0 15px 45px rgba(26,83,119,.13);
 }
 
 
-/* BLUE CIRCLE */
+/* LIGHT CIRCLE */
 
 .hero-box::before {
   content: "";
 
   position: absolute;
 
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
 
-  right: -130px;
-  top: -100px;
+  right: -150px;
+  top: -150px;
 
   border-radius: 50%;
 
   background:
-    rgba(255,255,255,.45);
+    rgba(255,255,255,.48);
 }
 
 
-/* WATER EFFECT */
+/* BLUE WATER GLOW */
 
 .hero-box::after {
   content: "";
@@ -423,18 +432,18 @@ header > .button.small:hover {
 
   left: -20%;
 
-  top: 42%;
+  top: 43%;
 
   transform: rotate(-8deg);
 
   background:
-    rgba(255,255,255,.35);
+    rgba(255,255,255,.4);
 
-  filter: blur(15px);
+  filter: blur(16px);
 }
 
 
-/* HERO BOX TEXT */
+/* HERO GRAPHIC TEXT */
 
 .hero-box > div {
   position: relative;
@@ -459,7 +468,7 @@ header > .button.small:hover {
 .hero-box strong {
   display: block;
 
-  color: #12304a;
+  color: #153c59;
 
   font-size:
     clamp(45px, 5vw, 70px);
@@ -476,14 +485,14 @@ header > .button.small:hover {
 
   margin-top: 18px;
 
-  color: #31536d;
+  color: #41647b;
 
   font-size: 14px;
 }
 
 
 /* =========================================================
-   GENERAL SECTIONS
+   SERVICES
    ========================================================= */
 
 .section {
@@ -494,11 +503,11 @@ header > .button.small:hover {
 }
 
 .section:nth-of-type(even) {
-  background: var(--off-white);
+  background: var(--gray-bg);
 }
 
 
-/* SECTION TITLES */
+/* SECTION TITLE */
 
 .section > .eyebrow,
 .section > h2,
@@ -512,7 +521,7 @@ header > .button.small:hover {
   margin:
     8px auto 15px;
 
-  color: #172331;
+  color: var(--dark);
 
   font-size:
     clamp(38px, 5vw, 58px);
@@ -555,22 +564,21 @@ header > .button.small:hover {
   gap: 18px;
 }
 
-
 .cards article {
-  min-height: 220px;
+  min-height: 215px;
 
   padding:
     30px 26px;
 
-  background: white;
+  background: #ffffff;
 
   border:
-    1px solid var(--border);
+    1px solid var(--gray-border);
 
   border-radius: 14px;
 
   box-shadow:
-    0 8px 25px rgba(35,70,100,.07);
+    var(--shadow);
 
   transition:
     transform .2s ease,
@@ -578,19 +586,18 @@ header > .button.small:hover {
     border-color .2s ease;
 }
 
-
 .cards article:hover {
   transform: translateY(-4px);
 
   border-color:
-    #acd9f8;
+    #a9d9f7;
 
   box-shadow:
-    0 14px 35px rgba(35,70,100,.12);
+    0 15px 35px rgba(27,73,105,.13);
 }
 
 
-/* NUMBER */
+/* SERVICE NUMBER */
 
 .cards article i {
   display: inline-flex;
@@ -601,11 +608,12 @@ header > .button.small:hover {
   width: 40px;
   height: 40px;
 
-  margin-bottom: 18px;
+  margin-bottom: 17px;
 
   border-radius: 9px;
 
-  background: var(--light-blue);
+  background:
+    var(--blue-light);
 
   color: var(--blue);
 
@@ -621,7 +629,7 @@ header > .button.small:hover {
   margin:
     0 0 8px;
 
-  color: #172331;
+  color: var(--dark);
 
   font-size: 18px;
 
@@ -631,7 +639,7 @@ header > .button.small:hover {
 .cards article p {
   margin: 0;
 
-  color: #718291;
+  color: var(--muted);
 
   font-size: 14px;
 
@@ -654,18 +662,17 @@ header > .button.small:hover {
 
   align-items: center;
 
-  gap: 70px;
+  gap: 60px;
 
   background:
     #eef8ff;
 }
 
-
 .dark h2 {
   margin:
     8px 0 18px;
 
-  color: #172331;
+  color: var(--dark);
 
   font-size:
     clamp(40px, 5vw, 60px);
@@ -680,7 +687,6 @@ header > .button.small:hover {
 
   font-style: normal;
 }
-
 
 .dark > div:first-child > p:not(.eyebrow) {
   color: #617586;
@@ -708,10 +714,10 @@ header > .button.small:hover {
   padding:
     17px 20px;
 
-  background: white;
+  background: #ffffff;
 
   border:
-    1px solid #cfe2ee;
+    1px solid #cfe1ed;
 
   border-radius: 10px;
 
@@ -742,10 +748,10 @@ header > .button.small:hover {
 }
 
 
-/* BIN VISUAL */
+/* BIN BOX */
 
 .bin-box {
-  min-height: 380px;
+  min-height: 370px;
 
   position: relative;
 
@@ -759,17 +765,17 @@ header > .button.small:hover {
 
   overflow: hidden;
 
-  border-radius: 18px;
+  border-radius: 20px;
 
   background:
     linear-gradient(
       135deg,
       #dff3ff,
-      #91d2ff
+      #91d3ff
     );
 
   border:
-    1px solid #b8def5;
+    1px solid #b7ddf6;
 
   box-shadow:
     var(--shadow);
@@ -782,7 +788,7 @@ header > .button.small:hover {
 
   font-size: 150px;
 
-  opacity: .13;
+  opacity: .12;
 }
 
 .bin-box span,
@@ -816,7 +822,7 @@ header > .button.small:hover {
 
 
 /* =========================================================
-   BEFORE / AFTER
+   BEFORE / AFTER GALLERY
    ========================================================= */
 
 .before-after-gallery {
@@ -833,27 +839,25 @@ header > .button.small:hover {
   gap: 22px;
 }
 
-
 .project-card {
   padding: 22px;
 
-  background: white;
+  background: #ffffff;
 
   border:
-    1px solid var(--border);
+    1px solid var(--gray-border);
 
   border-radius: 14px;
 
   box-shadow:
-    0 8px 25px rgba(35,70,100,.07);
+    var(--shadow);
 }
-
 
 .project-card h3 {
   margin:
     0 0 5px;
 
-  color: #172331;
+  color: var(--dark);
 
   font-size: 19px;
 }
@@ -862,13 +866,13 @@ header > .button.small:hover {
   margin:
     0 0 18px;
 
-  color: #718291;
+  color: var(--muted);
 
   font-size: 14px;
 }
 
 
-/* PHOTO PAIR */
+/* PHOTOS */
 
 .before-after {
   display: grid;
@@ -878,7 +882,6 @@ header > .button.small:hover {
 
   gap: 9px;
 }
-
 
 .photo-box {
   position: relative;
@@ -899,7 +902,6 @@ header > .button.small:hover {
   object-fit: cover;
 }
 
-
 .photo-box span {
   position: absolute;
 
@@ -914,7 +916,7 @@ header > .button.small:hover {
   border-radius: 4px;
 
   background:
-    rgba(255,255,255,.93);
+    rgba(255,255,255,.94);
 
   color: #203545;
 
@@ -931,7 +933,7 @@ header > .button.small:hover {
    ========================================================= */
 
 .story {
-  min-height: 450px;
+  min-height: 430px;
 
   padding:
     90px 7%;
@@ -948,17 +950,15 @@ header > .button.small:hover {
     );
 }
 
-
 .story > div {
   max-width: 760px;
 }
-
 
 .story h2 {
   margin:
     8px 0 20px;
 
-  color: #172331;
+  color: var(--dark);
 
   font-size:
     clamp(42px, 5vw, 62px);
@@ -973,7 +973,6 @@ header > .button.small:hover {
 
   font-style: normal;
 }
-
 
 .story p:not(.eyebrow) {
   max-width: 650px;
@@ -992,7 +991,7 @@ header > .button.small:hover {
 
 .cta {
   padding:
-    90px 20px;
+    85px 20px;
 
   text-align: center;
 
@@ -1000,12 +999,11 @@ header > .button.small:hover {
     linear-gradient(
       135deg,
       #087fe8,
-      #0564bd
+      #0565bd
     );
 
   color: white;
 }
-
 
 .cta h2 {
   max-width: 850px;
@@ -1025,25 +1023,23 @@ header > .button.small:hover {
   margin:
     0 auto 28px;
 
-  color: rgba(255,255,255,.88);
+  color:
+    rgba(255,255,255,.9);
 
   font-size: 17px;
 }
 
-
-/* CTA BUTTON */
-
 .cta .button {
-  background: white;
+  background: #ffffff;
 
   color: var(--blue-dark);
 
   box-shadow:
-    0 10px 25px rgba(0,0,0,.16);
+    0 10px 25px rgba(0,0,0,.15);
 }
 
 .cta .button:hover {
-  background: #f2f9ff;
+  background: #f3faff;
 }
 
 
@@ -1055,16 +1051,16 @@ footer {
   padding:
     30px 20px;
 
-  background: white;
+  background: #ffffff;
 
   border-top:
-    1px solid var(--border);
+    1px solid var(--gray-border);
 
   text-align: center;
 }
 
 footer .logo {
-  color: #172331;
+  color: var(--dark);
 
   font-size: 22px;
 
@@ -1146,8 +1142,6 @@ footer p {
 
 @media (max-width: 700px) {
 
-  /* HEADER */
-
   header {
     min-height: 68px;
 
@@ -1176,6 +1170,8 @@ footer p {
   /* HERO */
 
   .hero {
+    min-height: auto;
+
     padding:
       55px 18px 60px;
 
@@ -1196,6 +1192,8 @@ footer p {
     flex-direction: column;
 
     width: 100%;
+
+    gap: 10px;
   }
 
   .actions .button {
@@ -1212,7 +1210,7 @@ footer p {
   /* HERO BOX */
 
   .hero-box {
-    min-height: 260px;
+    min-height: 255px;
 
     margin-top: 35px;
 
@@ -1254,7 +1252,7 @@ footer p {
   }
 
   .cards article {
-    min-height: 190px;
+    min-height: 185px;
 
     padding:
       22px 12px;
@@ -1280,6 +1278,10 @@ footer p {
     font-size: 39px;
   }
 
+  .prices {
+    gap: 8px;
+  }
+
   .prices > div {
     flex: 1;
 
@@ -1294,7 +1296,7 @@ footer p {
   }
 
   .bin-box {
-    min-height: 260px;
+    min-height: 255px;
 
     margin-top: 10px;
   }
@@ -1332,7 +1334,7 @@ footer p {
   }
 
 
-  /* CTA */
+  /* FINAL CTA */
 
   .cta {
     padding:
