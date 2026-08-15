@@ -1445,3 +1445,89 @@ a.button:hover,
 a.button:active {
   text-decoration: none !important;
 }
+/* =========================================================
+   CURBSIDE SHINE - BOOKING BUTTON FIX
+   ========================================================= */
+
+/* SCHEDULE A QUOTE */
+.hero .actions a.button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-height: 56px !important;
+  padding: 15px 28px !important;
+
+  background: #087fe8 !important;
+  color: #ffffff !important;
+
+  border: 2px solid #087fe8 !important;
+  border-radius: 8px !important;
+
+  font-size: 16px !important;
+  font-weight: 900 !important;
+
+  text-decoration: none !important;
+
+  box-shadow: 0 7px 20px rgba(8,127,232,.22) !important;
+}
+
+
+/* BIN CLEANING */
+.hero .actions a.button.outline {
+  background: #ffffff !important;
+
+  color: #087fe8 !important;
+
+  border: 2px solid #087fe8 !important;
+
+  box-shadow: none !important;
+}
+
+
+/* HEADER BOOK / SCHEDULE BUTTON */
+header a.button.small {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-height: 46px !important;
+
+  padding: 11px 22px !important;
+
+  background: #087fe8 !important;
+  color: #ffffff !important;
+
+  border: 0 !important;
+  border-radius: 8px !important;
+
+  font-size: 14px !important;
+  font-weight: 900 !important;
+
+  text-decoration: none !important;
+
+  box-shadow: 0 6px 18px rgba(8,127,232,.22) !important;
+}
+
+
+/* HOVER */
+.hero .actions a.button:hover,
+header a.button.small:hover {
+  background: #0567c7 !important;
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(8,127,232,.28) !important;
+}
+
+
+/* MAKE SURE LINK STATES DON'T CHANGE THE TEXT */
+.hero .actions a.button:visited,
+.hero .actions a.button:active,
+.hero .actions a.button:focus,
+header a.button.small:visited,
+header a.button.small:active,
+header a.button.small:focus {
+  text-decoration: none !important;
+}
